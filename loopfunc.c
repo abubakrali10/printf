@@ -18,7 +18,7 @@ int loopfunc(const char *format, id *identfy, va_list args)
 		j = 0;
 		if (format[i] == *percentage)
 		{
-			while (j < 11)
+			while (j < 4)
 			{
 				if (format[i + 1] == *(identfy[j].str))
 				{
