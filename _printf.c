@@ -14,7 +14,9 @@ int _printf(const char *format, ...)
 	id identfy[] = {
 		{"%", p_perc},
 		{"c", p_char},
-		{"s", p_str}
+		{"s", p_str},
+		{"d", p_int},
+		{"i", p_int}
 	};
 
 	if (format == NULL)
