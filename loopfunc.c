@@ -21,6 +21,8 @@ int loopfunc(const char *format, id *identfy, va_list args)
 		{
 			if (format[i + 1] == *(identfy[j].str) && format[i] == *percentage)
 			{
+				if (!args)
+					return (-1);
 				find = 1;
 				len += identfy[j].f(args);
 				i++;
