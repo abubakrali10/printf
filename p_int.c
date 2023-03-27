@@ -31,6 +31,8 @@ int p_int(va_list args)
 	int len = 0;
 	int s = va_arg(args, int);
 
+	if (!s)
+		return (-1);
 	print(s);
 	if (s < 0)
 	{
