@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 	{
 		find = 0;
 		j = 0;
-		while (j < 10)
+		while (j < 3)
 		{
 			if (format[i + 1] == *(identfy[j].str) && format[i] == *percentage)
 			{
