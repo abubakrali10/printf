@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 	};
 
 	if (format == NULL)
-		_putchar(len);
+		return (0);
 
 	va_start(args, format);
 
