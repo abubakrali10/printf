@@ -14,6 +14,7 @@ typedef struct id
 
 int _putchar(char c);
 int _printf(const char *format, ...);
+int loopfunc(const char *format, id *identfy, va_list args);
 int p_perc(va_list args);
 int p_char(va_list args);
 int p_str(va_list args);

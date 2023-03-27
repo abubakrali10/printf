@@ -9,8 +9,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, j = 0, find, len = 0;
-	char percentage[1] = "%";
+	int len = 0;
 	va_list args;
 	id identfy[] = {
 		{"%", p_perc},
@@ -23,28 +22,8 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	while (format[i] != '\0')
-	{
-		find = 0;
-		j = 0;
-		while (j < 3)
-		{
-			if (format[i + 1] == *(identfy[j].str) && format[i] == *percentage)
-			{
-				find = 1;
-				len += identfy[j].f(args);
-				i++;
-				break;
-			}
-			j++;
-		}
-		if (find == 0)
-		{
-			_putchar(format[i]);
-			len++;
-		}
-		i++;
-	}
+	len = loopfunc(format, identfy, args);
+
 	va_end(args);
 
 	return (len);
