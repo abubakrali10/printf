@@ -19,6 +19,8 @@ int loopfunc(const char *format, id *identfy, va_list args)
 		j = 0;
 		while (j < 3)
 		{
+			if (!format[i + 1] && format[i] == *percentage)
+				return (-1);	
 			if (format[i + 1] == *(identfy[j].str) && format[i] == *percentage)
 			{
 				if (!args)
