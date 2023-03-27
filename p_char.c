@@ -11,8 +11,6 @@ int p_char(va_list args)
 {
 	char s = va_arg(args, int);
 
-	if (!s)
-		return (-1);
 	_putchar(s);
 	return (1);
 }
