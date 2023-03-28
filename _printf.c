@@ -19,7 +19,8 @@ int _printf(const char *format, ...)
 		{"i", p_int},
 		{"b", p_bin},
 		{"o", p_octal},
-		{"u", p_unsigned}
+		{"u", p_unsigned},
+		{"x", p_hex}
 	};
 
 	if (format == NULL)
