@@ -6,7 +6,7 @@
  * @n: number input
  * Return: length
  */
-int getlen(long int n)
+int getlen(int n)
 {
 	int len = 0;
 
@@ -25,7 +25,7 @@ int getlen(long int n)
  * @n: input n
  * Return: ascii code
  */
-int intToAscii(long int n)
+int intToAscii(int n)
 {
 	return ('0' + n);
 }
@@ -37,8 +37,8 @@ int intToAscii(long int n)
 int p_int(va_list args)
 {
 	char *p;
-	long int s = va_arg(args, long int);
-	long int num;
+	int s = va_arg(args, int);
+	int num;
 	int len = 0, i = 0, j;
 
 	if (s == 0)
