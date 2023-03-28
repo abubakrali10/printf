@@ -23,7 +23,7 @@ int loopfunc(const char *format, id *identfy, va_list args)
 				if (format[i + 1] == *(identfy[j].str))
 				{
 					if (identfy[j].f == NULL)
-							return (-1);
+						return (-1);
 					len += identfy[j].f(args);
 					i++;
 					break;
