@@ -11,7 +11,7 @@
 void printu(int n)
 {
 	if (n / 10 != 0)
-		print(n / 10);
+		printu(n / 10);
 	_putchar(n % 10 + '0');
 }
 
