@@ -12,6 +12,8 @@ int p_str(va_list args)
 	char *s = va_arg(args, char*);
 	int i = 0;
 
+	if (s == NULL)
+		s = "(null)";
 	while (s[i] != '\0')
 	{
 		_putchar(s[i]);
