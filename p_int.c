@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdarg.h>
+#include <unistd.h>
 /**
  * getlen - get length of number
  * @n: number input
@@ -37,8 +38,9 @@ int intToAscii(int n)
 int p_int(va_list args)
 {
 	char *p;
-	int s = va_arg(args, int);
-	int num, len = 0, i = 0, j;
+	long int s = va_arg(args, long int);
+	int num;
+	int len = 0, i = 0, j;
 
 	if (s == 0)
 	{
