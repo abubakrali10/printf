@@ -38,7 +38,7 @@ int p_int(va_list args)
 {
 	char *p;
 	int s = va_arg(args, int);
-	int num;
+	unsigned int num;
 	int len = 0, i = 0, j;
 
 	if (s == 0)
