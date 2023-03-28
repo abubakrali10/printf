@@ -10,28 +10,27 @@
  */
 int loopfunc(const char *format, id *identfy, va_list args)
 {
-	int i = 0, j = 0, len = 0;
+	int i = 0, j = 0, find, len = 0;
 	char percentage[1] = "%";
 
 	while (format[i] != '\0')
 	{
-		if (format[i] == *percentage)
+		find = 0;
+		j = 0;
+		while (j < 9)
 		{
-			j = 0;
-			while (j < 10)
+			if (!format[i + 1] && format[i] == *percentage)
+				return (-1);
+			if (format[i + 1] == *(identfy[j].str) && format[i] == *percentage)
 			{
-				if (format[i + 1] == *(identfy[j].str))
-				{
-					if (identfy[j].f == NULL)
-						return (-1);
-					len += identfy[j].f(args);
-					i++;
-					break;
-				}
-				j++;
+				find = 1;
+				len += identfy[j].f(args);
+				i++;
+				break;
 			}
+			j++;
 		}
-		else
+		if (find == 0)
 		{
 			_putchar(format[i]);
 			len++;
