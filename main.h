@@ -21,5 +21,6 @@ int p_str(va_list args);
 int p_int(va_list args);
 int p_bin(va_list args);
 int p_octal(va_list args);
+int p_unsigned(va_list args);
 
 #endif
