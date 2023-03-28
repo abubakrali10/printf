@@ -1,13 +1,12 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdarg.h>
-#include <unistd.h>
 /**
  * getlen - get length of number
  * @n: number input
  * Return: length
  */
-int getlen(int n)
+int getlen(long int n)
 {
 	int len = 0;
 
@@ -26,7 +25,7 @@ int getlen(int n)
  * @n: input n
  * Return: ascii code
  */
-int intToAscii(int n)
+int intToAscii(long int n)
 {
 	return ('0' + n);
 }
