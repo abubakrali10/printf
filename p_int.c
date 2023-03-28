@@ -39,7 +39,7 @@ int p_int(va_list args)
 {
 	char *p;
 	long int s = va_arg(args, long int);
-	int num;
+	long int num;
 	int len = 0, i = 0, j;
 
 	if (s == 0)
