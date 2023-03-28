@@ -1,52 +1,73 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdarg.h>
-
+#include <unistd.h>
 /**
- * print - Entry Point
- * @n: number
- * Return: void
+ * getlen - get length of number
+ * @n: number input
+ * Return: length
  */
-
-void print(int n)
+int getlen(int n)
 {
-	if (n < 0)
-	{
-		_putchar('-');
-		n = n * -1;
-	}
-	if (n / 10 != 0)
-		print(n / 10);
-	_putchar(n % 10 + '0');
-}
+	int len = 0;
 
+	if (n < 0)
+		n *= -1;
+	while (n > 0)
+	{
+		len++;
+		n /= 10;
+	}
+
+	return (len);
+}
+/**
+ * intToAscii - convert number to ascii code
+ * @n: input n
+ * Return: ascii code
+ */
+int intToAscii(int n)
+{
+	return ('0' + n);
+}
 /**
  * p_int - handling (%d and %i) specifier
  * @args: list name
  * Return: length
  */
-
 int p_int(va_list args)
 {
-	int len = 0;
-	int s = va_arg(args, int);
+	char *p;
+	long int s = va_arg(args, long int);
+	int num;
+	int len = 0, i = 0, j;
 
-	print(s);
 	if (s == 0)
 	{
-		_putchar(s);
-		len++;
+		_putchar('0');
+		return (1);
 	}
 	if (s < 0)
 	{
+		_putchar('-');
 		len++;
-		s *= -1;
+		num = s * -1;
 	}
-	while (s > 0)
+	else
+		num = s;
+
+	len += getlen(num);
+
+	p = malloc(sizeof(char) * (getlen(num) + 1));
+
+	while (num > 0)
 	{
-		s /= 10;
-		len++;
+		p[i] = intToAscii(num % 10);
+		num /= 10;
+		i++;
 	}
+	for (j = i - 1; j >= 0; j--)
+		_putchar(p[j]);
 
 	return (len);
 }

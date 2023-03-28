@@ -13,6 +13,11 @@ int p_bin(va_list args)
 	int i = 0, bin[32], j;
 	unsigned int s = va_arg(args, unsigned int);
 
+	if (s == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
 	while (s > 0)
 	{
 		bin[i] = s % 2;
