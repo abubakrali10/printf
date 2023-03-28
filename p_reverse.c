@@ -34,5 +34,5 @@ int p_reverse(va_list args)
 	{
 		_putchar(s[i]);
 	}
-	return (i);
+	return (get_length(s));
 }
