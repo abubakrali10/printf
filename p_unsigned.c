@@ -26,7 +26,7 @@ int p_unsigned(va_list args)
 	int len = 0;
 	unsigned int s = va_arg(args, unsigned int);
 
-	print(s);
+	printu(s);
 	if (s == 0)
 	{
 		_putchar(s);
