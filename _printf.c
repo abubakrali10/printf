@@ -18,7 +18,8 @@ int _printf(const char *format, ...)
 		{"d", p_int},
 		{"i", p_int},
 		{"b", p_bin},
-		{"o", p_octal}
+		{"o", p_octal},
+		{"u", p_unsigned}
 	};
 
 	if (format == NULL)
