@@ -13,8 +13,6 @@ int loopfunc(const char *format, id *identfy, va_list args)
 	int i = 0, j = 0, find, len = 0;
 	char percentage[1] = "%";
 
-	if (!format)
-		return (-1);
 	while (format[i] != '\0')
 	{
 		find = 0;
@@ -22,7 +20,7 @@ int loopfunc(const char *format, id *identfy, va_list args)
 		while (j < 10)
 		{
 			if (!format[i + 1] && format[i] == *percentage)
-				return (0);
+				return (-1);
 			if (format[i + 1] == *(identfy[j].str) && format[i] == *percentage)
 			{
 				find = 1;
