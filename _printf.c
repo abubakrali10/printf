@@ -21,7 +21,8 @@ int _printf(const char *format, ...)
 		{"o", p_octal},
 		{"u", p_unsigned},
 		{"x", p_hex},
-		{"X", p_hexx}
+		{"X", p_hexx},
+		{"r", p_reverse}
 	};
 
 	if (format == NULL)
