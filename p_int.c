@@ -2,43 +2,70 @@
 #include <stdlib.h>
 #include <stdarg.h>
 /**
+ * getlen - get length of number
+ * @n: number input
+ * Return: length
+ */
+int getlen(int n)
+{
+	int len = 0;
+
+	if (n < 0)
+		n *= -1;
+	while (n > 0)
+	{
+		len++;
+		n /= 10;
+	}
+
+	return (len);
+}
+/**
+ * intToAscii - convert number to ascii code
+ * @n: input n
+ * Return: ascii code
+ */
+int intToAscii(int n)
+{
+	return ('0' + n);
+}
+/**
  * p_int - handling (%d and %i) specifier
  * @args: list name
  * Return: length
  */
 int p_int(va_list args)
 {
-	int len = 0, j, reverse = 0;
+	char *p;
 	int s = va_arg(args, int);
+	int num, len = 0, i = 0, j;
 
 	if (s == 0)
 	{
 		_putchar('0');
 		return (1);
 	}
-
 	if (s < 0)
 	{
 		_putchar('-');
-		s = s * -1;
 		len++;
+		num = s * -1;
 	}
-	j = s % 10;
-	s /= 10;
-	len++;
+	else
+		num = s;
 
-	while (s != 0)
+	len += getlen(num);
+
+	p = malloc(sizeof(char) * (getlen(num) + 1));
+
+	while (num > 0)
 	{
-		reverse = (reverse * 10) + s % 10;
-		s /= 10;
-		len++;
+		p[i] = intToAscii(num % 10);
+		num /= 10;
+		i++;
 	}
-	while (reverse > 0)
-	{
-		_putchar(reverse % 10 + '0');
-		reverse /= 10;
-	}
-	_putchar(j + '0');
+	for (j = i - 1; j >= 0; j--)
+		_putchar(p[j]);
 
 	return (len);
 }
