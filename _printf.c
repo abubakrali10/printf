@@ -20,7 +20,8 @@ int _printf(const char *format, ...)
 		{"b", p_bin},
 		{"o", p_octal},
 		{"u", p_unsigned},
-		{"x", p_hex}
+		{"x", p_hex},
+		{"X", p_hexx}
 	};
 
 	if (format == NULL)
