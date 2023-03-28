@@ -34,5 +34,6 @@ int p_octal(va_list args);
 int p_unsigned(va_list args);
 int p_hex(va_list args);
 int p_hexx(va_list args);
+int p_reverse(va_list args);
 
 #endif
