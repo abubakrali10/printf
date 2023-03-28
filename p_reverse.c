@@ -10,7 +10,7 @@ int get_length(char *p)
 {
 	int count = 0;
 
-	while (*p != '\0')
+	while (*p)
 	{
 		count++;
 		p++;
@@ -30,9 +30,10 @@ int p_reverse(va_list args)
 
 	if (s == NULL)
 		s = "(null)";
-	for (i = get_length(s); i >= 0; i--)
+	for (i = (get_length(s) - 1); i >= 0; i--)
 	{
 		_putchar(s[i]);
 	}
+
 	return (i);
 }
