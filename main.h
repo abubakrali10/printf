@@ -11,6 +11,16 @@ typedef struct id
 	char *str;
 	int (*f)(va_list);
 } id;
+/**
+ * struct hexdi - new struct called hexid
+ * @n: number
+ * @c: character
+ */
+typedef struct hexdi
+{
+	int n;
+	char c;
+} hexdi;
 
 int _putchar(char c);
 int _printf(const char *format, ...);
@@ -22,5 +32,6 @@ int p_int(va_list args);
 int p_bin(va_list args);
 int p_octal(va_list args);
 int p_unsigned(va_list args);
+int p_hex(va_list args);
 
 #endif
