@@ -17,7 +17,7 @@ int loopfunc(const char *format, id *identfy, va_list args)
 	{
 		find = 0;
 		j = 0;
-		while (j < 7)
+		while (j < 8)
 		{
 			if (!format[i + 1] && format[i] == *percentage)
 				return (-1);
