@@ -29,7 +29,7 @@ int p_ascii(va_list args)
 			else
 				i += hex_cap((int)s[len]);
 		}
-		len++;	
+		len++;
 	}
 
 	return (i);
