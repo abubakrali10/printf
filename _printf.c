@@ -23,7 +23,8 @@ int _printf(const char *format, ...)
 		{"x", p_hex},
 		{"X", p_hexx},
 		{"r", p_reverse},
-		{"R", p_rot}
+		{"R", p_rot},
+		{"S", p_ascii}
 	};
 
 	if (format == NULL)
