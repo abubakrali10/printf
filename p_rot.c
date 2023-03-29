@@ -12,7 +12,7 @@ int p_rot(va_list args)
 	char *s = va_arg(args, char *);
 
 	if (!s)
-		return (0);
+		return (-1);
 
 	while (s[len])
 	{
