@@ -37,5 +37,5 @@ int p_hexx(va_list args);
 int p_reverse(va_list args);
 int p_rot(va_list args);
 int hex_cap(int s);
-
+int p_ascii(va_list args);
 #endif
