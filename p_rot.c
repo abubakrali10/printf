@@ -11,6 +11,9 @@ int p_rot(va_list args)
 	int len = 0;
 	char *s = va_arg(args, char *);
 
+	if (!s)
+		return (0);
+
 	while (s[len])
 	{
 		int n = 0;
