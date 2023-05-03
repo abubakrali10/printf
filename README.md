@@ -4,7 +4,7 @@ This project is an implementation of the printf function. The printf function is
 
 ## Usage
 
-To use the custom printf function, simply include the header file "holberton.h" and call the function with a format string and any variable arguments that need to be formatted.
+To use the custom printf function, simply include the header file "main.h" and call the function with a format string and any variable arguments that need to be formatted.
 
 ```c
 #include "main.h"
@@ -44,25 +44,9 @@ The custom printf function supports the following conversion specifiers:
 - `%r`: prints a string in reverse order
 - `%R`: prints a string with each letter rotated by 13 positions (ROT13)
 
-## Limitations
-
-The custom printf function has the following limitations:
-
-- The function does not support the flag characters used in the standard printf function
-- The function does not support field width or precision
-- The function does not support length modifiers
-
-## Buffering
-
-In order to minimize the number of calls to the write system call, the custom printf function uses a local buffer of size 1024 characters to store formatted output before writing it to stdout.
-
 ## Error handling
 
 If the format string is NULL or if an unsupported conversion specifier is encountered, the function returns -1.
-
-## Future work
-
-Possible future enhancements to the custom printf function could include support for additional conversion specifiers, support for flag characters, field width and precision, and length modifiers.
 
 ## Contributors
 
